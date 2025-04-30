@@ -11,6 +11,9 @@ class User(db.Model):
     is_active: Mapped[bool] = mapped_column(Boolean(), nullable=False)
 
 
+    def __repr__(self):
+        return f"Usuario con id {self.id} y email: {self.email}"
+
     def serialize(self):
         return {
             "id": self.id,
